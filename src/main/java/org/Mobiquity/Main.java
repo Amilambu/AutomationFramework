@@ -1,8 +1,17 @@
 package org.Mobiquity;
-
+//import static io.restassured.RestAssured.given;
 public class Main {
- /*  public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+ /**   public void searchForUserByUsername(){
+        given().
+                when()
+                .get("https://jsonplaceholder.typicode.com/users")
+                .then()
+                .statusCode(200)
+                .log()
+                .all();
+        // .body("",);
+
     }
- */
+  */
 }
