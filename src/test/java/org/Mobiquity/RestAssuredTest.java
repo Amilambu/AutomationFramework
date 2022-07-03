@@ -1,17 +1,9 @@
 package org.Mobiquity;
 
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 public class RestAssuredTest extends Main {
-  @Test
-  /**public  void SearchForUsernameTest() {
-    searchForUserByUsername();
-
-  }*/
-
-  /**Search for the user with username “Delphine”.*/
 
   public void searchForUserByUsername(){
     given().
@@ -23,7 +15,7 @@ public class RestAssuredTest extends Main {
 
   }
   /**Use the details fetched to make a search for the posts written by the
-  user.*/
+   user.*/
   @Test
   public void  searchForPostsWrittenByTheUser(){
     given().
@@ -35,18 +27,18 @@ public class RestAssuredTest extends Main {
 
   }
   /**For each post, fetch the comments and validate if the emails in the
-  comment section are in the proper format.*/
+   comment section are in the proper format.*/
   @Test
   public void fetchCommentsAndValidateEmail(){
-  given()
+    given()
 
-          .get("https://jsonplaceholder.typicode.com/posts/1/comments")
-          .then()
-          .assertThat()
-          .body("email", hasItem("Eliseo@gardner.biz"));
+            .get("https://jsonplaceholder.typicode.com/posts/1/comments")
+            .then()
+            .assertThat()
+            .body("email", hasItem("Eliseo@gardner.biz"));
 
 
-}
+  }
   @Test
   public void  verifyPhotos(){
     given().
@@ -67,6 +59,9 @@ public class RestAssuredTest extends Main {
             .body("title", hasItems("quidem molestiae enim"));
 
   }
+
+
+
 
 
 }
