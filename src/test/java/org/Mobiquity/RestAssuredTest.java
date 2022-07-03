@@ -25,7 +25,7 @@ public class RestAssuredTest extends Main {
   /**Use the details fetched to make a search for the posts written by the
   user.*/
   @Test
-  public void  searchforpostswrittenbytheuser(){
+  public void  searchForPostsWrittenByTheUser(){
     given().
             when()
             .get("https://jsonplaceholder.typicode.com/posts")
@@ -36,12 +36,15 @@ public class RestAssuredTest extends Main {
   }
   /**For each post, fetch the comments and validate if the emails in the
   comment section are in the proper format.*/
-/**public void validateComments(){
-  given().
-          when()
-          .fetch ("https://jsonplaceholder.typicode.com/posts/1/comments")
+  @Test
+  public void fetchCommentsAndValidateEmail(){
+  given()
+
+          .get("https://jsonplaceholder.typicode.com/posts/1/comments")
           .then()
-          .statusCode(200)
-          .body("id[8]", equalTo(9));
-}*/
+          .assertThat()
+          .body("email", hasItem("Eliseo@gardner.biz"));
+
+
+}
 }
