@@ -47,4 +47,26 @@ public class RestAssuredTest extends Main {
 
 
 }
+  @Test
+  public void  verifyPhotos(){
+    given().
+            when()
+            .get("https://jsonplaceholder.typicode.com/photos")
+            .then()
+
+            .body("id[0]", equalTo(1));
+
+  }
+  @Test
+  public void SearchAlbumsTitle(){
+    given().
+            when()
+            .get("https://jsonplaceholder.typicode.com/albums")
+            .then()
+            .statusCode(200)
+            .body("title", hasItems("quidem molestiae enim"));
+
+  }
+
+
 }
